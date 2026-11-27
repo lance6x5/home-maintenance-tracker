@@ -4,6 +4,10 @@
 
 ![Visits](https://abacus.jasoncameron.dev/get/lance6x5.github.io/home-maintenance-tracker/shield)
 
+A **Silverlight DevTech** project · © 2026 Silverlight DevTech. Source-available under the [PolyForm Noncommercial License 1.0.0](LICENSE.md).
+
+More apps: https://lance6x5.github.io/
+
 **Home care, season by season.** Hearthkeep is a home maintenance tracker (repo: `home-maintenance-tracker`).
 
 Track recurring home maintenance tasks — furnace filters, detector tests, gutter cleaning and more — and see at a glance what's overdue, due this week, or coming up.
@@ -109,3 +113,17 @@ tests/                   Vitest unit tests
 ## Data format
 
 Exports are JSON: `{ "app": "home-maintenance-tracker", "version": 1, "exportedAt": "...", "tasks": [...] }`. Imports are validated; invalid entries are skipped, and importing replaces current data.
+
+## License
+
+Copyright © 2026 Silverlight DevTech. Hearthkeep is **source-available**, not OSI-approved open source. It is licensed under the [PolyForm Noncommercial License 1.0.0](LICENSE.md) (SPDX: `PolyForm-Noncommercial-1.0.0`).
+
+- **Free for noncommercial use:** personal, educational, research, nonprofit and other noncommercial use is allowed under the license terms.
+- **Commercial use needs a separate license:** selling it, hosting it as a paid service, or using it inside a business product requires a commercial license from Silverlight DevTech. To ask, open a [GitHub issue](https://github.com/lance6x5/home-maintenance-tracker/issues) on this repo.
+- **Redistribution:** anyone redistributing the code must keep [LICENSE.md](LICENSE.md), including its `Required Notice` line.
+
+Third-party dependencies keep their own licenses.
+
+## Trademarks
+
+Hearthkeep and its logo are trademarks of Silverlight DevTech. The license covers the code only, not the names or logos, so forks must use a different name and logo.

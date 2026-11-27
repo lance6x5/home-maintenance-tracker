@@ -18,6 +18,10 @@ A free GitHub account is required. Please don't include personal data.
 3. Work happens on a branch, then a pull request that says `Fixes #N` so the issue closes on merge.
 4. Changes are recorded in [CHANGELOG.md](CHANGELOG.md) and shipped in the next release.
 
+## Licensing of contributions
+
+Hearthkeep is licensed under the [PolyForm Noncommercial License 1.0.0](LICENSE.md). By submitting a pull request, you agree that your contribution is licensed to Silverlight DevTech under the same terms and may also be offered under Silverlight DevTech's commercial licenses.
+
 ## Development
 
 See the README for `npm install`, `npm test` and `npm run build`. Please add or update unit tests in `tests/` for logic changes.
