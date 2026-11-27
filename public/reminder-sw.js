@@ -45,7 +45,7 @@
     await self.registration.showNotification(title, {
       body: names + more,
       tag: 'hmt-due',
-      icon: 'icon.svg',
+      icon: 'icon-192.png',
       badge: 'icon.svg'
     });
   }

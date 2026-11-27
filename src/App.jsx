@@ -11,6 +11,10 @@ import TaskForm from './views/TaskForm.jsx';
 import TaskDetail from './views/TaskDetail.jsx';
 import Settings from './views/Settings.jsx';
 
+/* global __APP_VERSION__ */
+// Injected at build time by vite.config.js (define).
+const APP_VERSION = typeof __APP_VERSION__ !== 'undefined' ? __APP_VERSION__ : 'dev';
+
 const NAV = [
   { path: '', label: 'Dashboard' },
   { path: 'seasonal', label: 'Seasonal' },
@@ -60,8 +64,11 @@ export default function App() {
       </a>
       <header className="app-header">
         <a className="brand" href="#/">
-          <img src="icon.svg" alt="" width="28" height="28" />
-          <span>Home Maintenance</span>
+          <img src="icon.svg" alt="" width="36" height="36" />
+          <span className="brand-text">
+            <span className="brand-name">Hearth<span className="brand-accent">keep</span></span>
+            <span className="brand-tagline">Home care, season by season</span>
+          </span>
         </a>
         <nav aria-label="Main">
           <ul className="nav">
@@ -86,6 +93,10 @@ export default function App() {
       </main>
       <footer className="app-footer">
         <p>Your data stays in this browser. Use Settings → Export to back it up.</p>
+        <p>
+          Hearthkeep <span className="version">v{APP_VERSION}</span> ·{' '}
+          <a href="https://github.com/lance6x5/home-maintenance-tracker/blob/main/CHANGELOG.md">Changelog</a>
+        </p>
       </footer>
     </>
   );

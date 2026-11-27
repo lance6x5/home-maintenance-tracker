@@ -1,12 +1,16 @@
-/* ---------- Theme (light default, dark via prefers-color-scheme) ---------- */
+/* ---------- Hearthkeep theme (light default, dark via prefers-color-scheme) ----------
+   Brand palette: hearth navy #23395b, ember #c2602b / #e07a3f, cream #f6efe3. */
 :root {
-  --bg: #f6f7f5;
+  --bg: #f8f5ef;
   --surface: #ffffff;
-  --surface-2: #eef1ed;
-  --text: #1b1f1c;
-  --muted: #4f5a53;
-  --border: #cfd6d0;
-  --primary: #2f6f4f;
+  --surface-2: #efeae0;
+  --text: #1d2433;
+  --muted: #535c6c;
+  --border: #d8d1c4;
+  --primary: #23395b;
+  --accent: #c2602b;
+  --header-bg: #23395b;
+  --header-text: #f6efe3;
   --primary-text: #ffffff;
   --focus: #1a5fd0;
   --overdue: #b3261e;
@@ -23,14 +27,17 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #121513;
-    --surface: #1c211e;
-    --surface-2: #252b27;
-    --text: #e8ece9;
-    --muted: #a9b4ad;
-    --border: #3a443e;
-    --primary: #6fcf97;
-    --primary-text: #0d1f14;
+    --bg: #11151d;
+    --surface: #1a2030;
+    --surface-2: #242b3d;
+    --text: #ece7de;
+    --muted: #aab1bf;
+    --border: #39425a;
+    --primary: #9dbbe6;
+    --primary-text: #0f1a2c;
+    --accent: #f29a5e;
+    --header-bg: #1a2338;
+    --header-text: #f6efe3;
     --focus: #8ab4ff;
     --overdue: #ff8a80;
     --overdue-bg: #3b1d1b;
@@ -74,18 +81,27 @@ main:focus { outline: none; }
 
 /* ---------- Layout ---------- */
 .app-header {
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
+  background: var(--header-bg);
+  color: var(--header-text);
+  border-bottom: 3px solid var(--accent);
   padding: 0.5rem 1rem;
   display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.5rem;
   position: sticky; top: 0; z-index: 5;
 }
-.brand { display: flex; align-items: center; gap: 0.5rem; font-weight: 700; color: var(--text); text-decoration: none; }
+.brand { display: flex; align-items: center; gap: 0.6rem; color: var(--header-text); text-decoration: none; }
+.brand img { border-radius: 9px; box-shadow: 0 0 0 1px rgb(246 239 227 / 0.35); }
+.brand-text { display: flex; flex-direction: column; line-height: 1.1; }
+.brand-name { font-family: Georgia, 'Times New Roman', serif; font-size: 1.35rem; font-weight: 700; letter-spacing: 0.01em; }
+.brand-accent { color: #f2a36b; }
+.brand-tagline { font-size: 0.75rem; opacity: 0.85; }
 .nav { list-style: none; display: flex; gap: 0.25rem; margin: 0; padding: 0; flex-wrap: wrap; }
 .nav a {
-  display: block; padding: 0.45rem 0.7rem; border-radius: 999px; text-decoration: none; color: var(--text); font-size: 0.95rem;
+  display: block; padding: 0.45rem 0.7rem; border-radius: 999px; text-decoration: none; color: var(--header-text); font-size: 0.95rem;
 }
-.nav a[aria-current='page'] { background: var(--primary); color: var(--primary-text); }
+.nav a:hover { background: rgb(246 239 227 / 0.12); }
+.nav a[aria-current='page'] { background: var(--header-text); color: #23395b; font-weight: 600; }
+.app-header :focus-visible { outline-color: #f6c453; }
+.version { font-variant-numeric: tabular-nums; }
 main { max-width: 960px; margin: 0 auto; padding: 1rem; padding-bottom: 6rem; }
 .app-footer { text-align: center; color: var(--muted); font-size: 0.85rem; padding: 1rem; }
 

@@ -1,6 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="96" fill="#2f6f4f"/>
-  <path d="M256 104 92 240h44v168h96V304h48v104h96V240h44z" fill="#ffffff"/>
-  <circle cx="368" cy="152" r="40" fill="#f2b134"/>
-  <path d="M352 152l12 12 22-24" stroke="#2f6f4f" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Hearthkeep">
+  <!-- Hearthkeep mark: a home with a glowing hearth inside -->
+  <rect width="512" height="512" rx="112" fill="#23395b"/>
+  <rect x="330" y="120" width="40" height="80" fill="#f6efe3"/>
+  <path d="M256 92 84 236h40v176h264V236h40z" fill="#f6efe3"/>
+  <path d="M186 412V316a70 70 0 0 1 140 0v96z" fill="#23395b"/>
+  <path d="M256 296c28 30 46 54 46 78 0 22-20 34-46 34s-46-12-46-34c0-18 12-32 26-44 0 18 8 28 18 30-6-24-4-44 2-64z" fill="#e07a3f"/>
+  <path d="M256 344c12 14 20 24 20 36 0 12-9 18-20 18s-20-6-20-18c0-10 8-22 20-36z" fill="#f6c453"/>
 </svg>

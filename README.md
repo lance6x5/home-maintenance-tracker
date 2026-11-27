@@ -1,4 +1,8 @@
-# Home Maintenance Tracker
+<p align="center"><img src="public/logo.svg" alt="Hearthkeep logo" width="480"></p>
+
+# Hearthkeep
+
+**Home care, season by season.** Hearthkeep is a home maintenance tracker (repo: `home-maintenance-tracker`).
 
 Track recurring home maintenance tasks — furnace filters, detector tests, gutter cleaning and more — and see at a glance what's overdue, due this week, or coming up.
 
@@ -48,6 +52,16 @@ Requires Node 20+ (CI uses Node 22).
 
 The Vite `base` is set to `/home-maintenance-tracker/` in `vite.config.js`. If you rename the repo, update `BASE` there.
 
+## Versioning
+
+Hearthkeep follows [Semantic Versioning](https://semver.org/). The current version is in `package.json`, shown in the app footer, and every release is listed in [CHANGELOG.md](CHANGELOG.md) (Keep a Changelog format) with a matching git tag and GitHub release.
+
+- **MAJOR**: breaking change to stored data or the export/import schema.
+- **MINOR**: new features that keep existing data compatible.
+- **PATCH**: bug fixes and small tweaks.
+
+To release: update `version` in `package.json`, move the Unreleased notes into a dated section in `CHANGELOG.md`, commit, push, then `git tag -a vX.Y.Z -m "Hearthkeep vX.Y.Z"` and `git push origin vX.Y.Z`, and create a GitHub release from that changelog section.
+
 ## Project structure
 
 ```
@@ -63,6 +77,7 @@ src/
   lib/db.js              IndexedDB wrapper (localStorage fallback)
   lib/notify.js          Notification + Periodic Background Sync helpers
   views/, components/    UI
+public/logo.svg, icon*   Logo, favicon and PWA icons
 public/reminder-sw.js    Service-worker handlers (periodic check, notification click)
 tests/                   Vitest unit tests
 ```

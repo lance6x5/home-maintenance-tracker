@@ -71,7 +71,7 @@ export async function checkAndNotify(tasks, { force = false } = {}) {
   if (!force && last === ref) return false;
   const text = reminderText(tasksNeedingReminder(tasks, ref));
   if (!text) return false;
-  await show(text.title, { body: text.body, tag: NOTIFY_TAG, icon: 'icon.svg', badge: 'icon.svg' });
+  await show(text.title, { body: text.body, tag: NOTIFY_TAG, icon: 'icon-192.png', badge: 'icon.svg' });
   try {
     localStorage.setItem(LAST_KEY, ref);
   } catch {
@@ -86,7 +86,7 @@ export async function sendTestNotification() {
   await show('Notifications are working', {
     body: 'You will be reminded about due tasks when the app is opened.',
     tag: 'hmt-test',
-    icon: 'icon.svg'
+    icon: 'icon-192.png'
   });
   return true;
 }
