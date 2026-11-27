@@ -4,6 +4,7 @@
 import { useEffect, useRef } from 'react';
 import { useHashRoute, useTasks } from './hooks.js';
 import { checkAndNotify } from './lib/notify.js';
+import { buildIssueUrl } from './lib/feedback.js';
 import Dashboard from './views/Dashboard.jsx';
 import Seasonal from './views/Seasonal.jsx';
 import TasksView from './views/TasksView.jsx';
@@ -14,6 +15,10 @@ import Settings from './views/Settings.jsx';
 /* global __APP_VERSION__ */
 // Injected at build time by vite.config.js (define).
 const APP_VERSION = typeof __APP_VERSION__ !== 'undefined' ? __APP_VERSION__ : 'dev';
+
+const UA = typeof navigator !== 'undefined' ? navigator.userAgent : '';
+const bugUrl = buildIssueUrl('bug', { version: APP_VERSION, userAgent: UA });
+const featureUrl = buildIssueUrl('feature', { version: APP_VERSION });
 
 const NAV = [
   { path: '', label: 'Dashboard' },
@@ -97,6 +102,22 @@ export default function App() {
           Hearthkeep <span className="version">v{APP_VERSION}</span> ·{' '}
           <a href="https://github.com/lance6x5/home-maintenance-tracker/blob/main/CHANGELOG.md">Changelog</a>
         </p>
+        <nav className="feedback" aria-labelledby="feedback-heading">
+          <h2 id="feedback-heading" className="feedback-heading">Feedback</h2>
+          <ul className="feedback-actions">
+            <li>
+              <a className="btn btn-small" href={bugUrl} target="_blank" rel="noopener noreferrer">
+                Report a bug<span className="visually-hidden"> (opens GitHub in a new tab)</span>
+              </a>
+            </li>
+            <li>
+              <a className="btn btn-small" href={featureUrl} target="_blank" rel="noopener noreferrer">
+                Request a feature<span className="visually-hidden"> (opens GitHub in a new tab)</span>
+              </a>
+            </li>
+          </ul>
+          <p className="feedback-note">Opens GitHub — a free GitHub account is required. Don't include personal data.</p>
+        </nav>
       </footer>
     </>
   );

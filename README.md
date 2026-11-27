@@ -32,6 +32,16 @@ This is a static site on GitHub Pages — there is **no push server**. That mean
 - Notification permission is only requested after you click **Settings → Turn on notifications** and read the explanation — never on page load.
 - **For reliable reminders, use "Add to calendar"**. The `.ics` file contains a repeating event, so your calendar app (Google, Apple, Outlook) reminds you on schedule even if you never open this app. Re-export after big schedule changes.
 
+## Feedback & issues
+
+Found a bug or have an idea? Use the **Feedback** links in the app footer, or go straight to GitHub:
+
+- [Report a bug](https://github.com/lance6x5/home-maintenance-tracker/issues/new?template=bug_report.yml)
+- [Request a feature](https://github.com/lance6x5/home-maintenance-tracker/issues/new?template=feature_request.yml)
+- [All issues](https://github.com/lance6x5/home-maintenance-tracker/issues)
+
+The app only opens a pre-filled GitHub form (app version and browser info) in a new tab; nothing from your task data is sent. A free GitHub account is required to submit. See [CONTRIBUTING.md](CONTRIBUTING.md) for how issues are triaged.
+
 ## Local development
 
 ```bash
@@ -76,10 +86,12 @@ src/
   lib/backup.js          JSON export/import + validation
   lib/db.js              IndexedDB wrapper (localStorage fallback)
   lib/notify.js          Notification + Periodic Background Sync helpers
+  lib/feedback.js        Pre-filled GitHub issue URLs for in-app feedback
   views/, components/    UI
 public/logo.svg, icon*   Logo, favicon and PWA icons
 public/reminder-sw.js    Service-worker handlers (periodic check, notification click)
 tests/                   Vitest unit tests
+.github/ISSUE_TEMPLATE/  Bug report and feature request issue forms
 ```
 
 ## Data format

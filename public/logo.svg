@@ -1,4 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 300" role="img" aria-label="Hearthkeep — home care, season by season">
+  <style>
+    .wm { fill: #23395b; } .wm-accent { fill: #c2602b; } .tag { fill: #5b6475; }
+    @media (prefers-color-scheme: dark) {
+      .wm { fill: #f6efe3; } .wm-accent { fill: #f29a5e; } .tag { fill: #aab1bf; }
+    }
+  </style>
   <g transform="translate(22 22) scale(0.5)">
     <rect width="512" height="512" rx="112" fill="#23395b"/>
     <rect x="330" y="120" width="40" height="80" fill="#f6efe3"/>
@@ -7,6 +13,6 @@
     <path d="M256 296c28 30 46 54 46 78 0 22-20 34-46 34s-46-12-46-34c0-18 12-32 26-44 0 18 8 28 18 30-6-24-4-44 2-64z" fill="#e07a3f"/>
     <path d="M256 344c12 14 20 24 20 36 0 12-9 18-20 18s-20-6-20-18c0-10 8-22 20-36z" fill="#f6c453"/>
   </g>
-  <text x="320" y="168" font-family="Georgia, 'Times New Roman', serif" font-size="128" font-weight="700" fill="#23395b">Hearth<tspan fill="#c2602b">keep</tspan></text>
-  <text x="324" y="232" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="40" fill="#5b6475">Home care, season by season.</text>
+  <text x="320" y="168" font-family="Georgia, 'Times New Roman', serif" font-size="128" font-weight="700" class="wm" fill="#23395b">Hearth<tspan class="wm-accent" fill="#c2602b">keep</tspan></text>
+  <text x="324" y="232" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="40" class="tag" fill="#5b6475">Home care, season by season.</text>
 </svg>

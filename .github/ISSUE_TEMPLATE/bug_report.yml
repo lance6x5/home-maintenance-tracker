@@ -1,0 +1,47 @@
+name: Bug report
+description: Something in Hearthkeep isn't working as expected.
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug! Please don't include personal data (addresses, names, task notes you'd rather keep private).
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Describe the problem you ran into.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: How can we make it happen again?
+      placeholder: |
+        1. Go to ...
+        2. Click ...
+        3. See ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+      description: What did you expect to happen instead?
+  - type: input
+    id: version
+    attributes:
+      label: App version
+      description: Shown in the app footer (e.g. 1.1.0).
+  - type: input
+    id: environment
+    attributes:
+      label: Browser / OS
+      description: e.g. Chrome 131 on Windows 11, Safari on iOS 18, installed PWA or browser tab.
+  - type: textarea
+    id: notes
+    attributes:
+      label: Screenshots / notes
+      description: Drag images here or add any other context.

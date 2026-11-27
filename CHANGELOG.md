@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-11-27
+
+### Added
+- In-app feedback: "Report a bug" and "Request a feature" links in the footer open a pre-filled GitHub issue (app version and browser only, no task data) in a new tab.
+- GitHub issue forms for bug reports and feature requests (auto-labelled `triage`), and a CONTRIBUTING.md describing the triage flow.
+
+### Changed
+- Logo wordmark now switches to light colors in dark mode so it stays readable (e.g. the README on GitHub dark theme).
+
 ## [1.0.0] - 2026-11-27
 
 ### Added
@@ -29,5 +38,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Nothing yet (first release).
 
-[Unreleased]: https://github.com/lance6x5/home-maintenance-tracker/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/lance6x5/home-maintenance-tracker/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/lance6x5/home-maintenance-tracker/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/lance6x5/home-maintenance-tracker/releases/tag/v1.0.0
