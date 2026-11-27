@@ -2,13 +2,15 @@
 
 # Hearthkeep
 
+![Visits](https://abacus.jasoncameron.dev/get/lance6x5.github.io/home-maintenance-tracker/shield)
+
 **Home care, season by season.** Hearthkeep is a home maintenance tracker (repo: `home-maintenance-tracker`).
 
 Track recurring home maintenance tasks — furnace filters, detector tests, gutter cleaning and more — and see at a glance what's overdue, due this week, or coming up.
 
 **Live app:** https://lance6x5.github.io/home-maintenance-tracker/
 
-100% client-side: no backend, no accounts, no tracking. Your data is stored in your browser (IndexedDB).
+100% client-side: no backend, no accounts, no cookies. Your task data is stored in your browser (IndexedDB) and never leaves your device; the only outside request is an anonymous visit count (see [Privacy & analytics](#privacy--analytics)).
 
 ## Features
 
@@ -31,6 +33,15 @@ This is a static site on GitHub Pages — there is **no push server**. That mean
 - On Chromium browsers with the app **installed**, it also registers a Periodic Background Sync check. The browser decides if and when that runs (often roughly daily, and only for apps you use regularly). It is best effort, not guaranteed.
 - Notification permission is only requested after you click **Settings → Turn on notifications** and read the explanation — never on page load.
 - **For reliable reminders, use "Add to calendar"**. The `.ics` file contains a repeating event, so your calendar app (Google, Apple, Outlook) reminds you on schedule even if you never open this app. Re-export after big schedule changes.
+
+## Privacy & analytics
+
+Hearthkeep counts one anonymous page load per browser session using the open-source [Abacus](https://github.com/JasonLovesDoggo/abacus) counter, and shows the total in the footer.
+
+- No cookies, no accounts, and no personal or task data are sent or stored — the request contains only the counter name.
+- Do Not Track and Global Privacy Control are respected: with either on, your visit is not counted (the total is still displayed).
+- Like any web request, it reveals your IP address to the counter service.
+- The count is approximate (it includes bots and is not unique visitors) and public.
 
 ## Feedback & issues
 
@@ -87,6 +98,7 @@ src/
   lib/db.js              IndexedDB wrapper (localStorage fallback)
   lib/notify.js          Notification + Periodic Background Sync helpers
   lib/feedback.js        Pre-filled GitHub issue URLs for in-app feedback
+  lib/visits.js          Anonymous visit counter (Abacus), once per session
   views/, components/    UI
 public/logo.svg, icon*   Logo, favicon and PWA icons
 public/reminder-sw.js    Service-worker handlers (periodic check, notification click)

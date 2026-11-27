@@ -1,10 +1,11 @@
 /**
  * App shell: header, navigation and hash-based view switching.
  */
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useHashRoute, useTasks } from './hooks.js';
 import { checkAndNotify } from './lib/notify.js';
 import { buildIssueUrl } from './lib/feedback.js';
+import { getVisitCount, formatVisits } from './lib/visits.js';
 import Dashboard from './views/Dashboard.jsx';
 import Seasonal from './views/Seasonal.jsx';
 import TasksView from './views/TasksView.jsx';
@@ -52,6 +53,7 @@ export default function App() {
   const store = useTasks();
   const mainRef = useRef(null);
   const checked = useRef(false);
+  const [visits, setVisits] = useState(null);
   const active = ['new', 'edit', 'task'].includes(parts[0]) ? 'tasks' : parts[0] || '';
 
   // On app open, remind about due tasks (only if the user already granted permission).
@@ -61,6 +63,13 @@ export default function App() {
       checkAndNotify(store.tasks);
     }
   }, [store.loaded, store.tasks]);
+
+  // Anonymous visit count (fails silently; never blocks the app).
+  useEffect(() => {
+    let alive = true;
+    getVisitCount().then((v) => { if (alive && v !== null) setVisits(v); });
+    return () => { alive = false; };
+  }, []);
 
   return (
     <>
@@ -97,10 +106,13 @@ export default function App() {
         {store.loaded ? <View parts={parts} /> : <p aria-busy="true">Loading…</p>}
       </main>
       <footer className="app-footer">
-        <p>Your data stays in this browser. Use Settings → Export to back it up.</p>
+        <p>Your task data stays in this browser; the only outside request is an anonymous visit count. Use Settings → Export to back it up.</p>
         <p>
           Hearthkeep <span className="version">v{APP_VERSION}</span> ·{' '}
           <a href="https://github.com/lance6x5/home-maintenance-tracker/blob/main/CHANGELOG.md">Changelog</a>
+        </p>
+        <p className="visits" aria-live="polite" hidden={visits === null}>
+          {visits !== null ? formatVisits(visits) : ''}
         </p>
         <nav className="feedback" aria-labelledby="feedback-heading">
           <h2 id="feedback-heading" className="feedback-heading">Feedback</h2>

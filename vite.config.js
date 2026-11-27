@@ -38,6 +38,13 @@ export default defineConfig({
         // Cache the app shell for offline use.
         globPatterns: ['**/*.{js,css,html,svg,png}'],
         navigateFallback: `${BASE}index.html`,
+        // Never cache the anonymous visit counter (cross-origin, always live).
+        runtimeCaching: [
+          {
+            urlPattern: ({ url }) => url.origin === 'https://abacus.jasoncameron.dev',
+            handler: 'NetworkOnly'
+          }
+        ],
         // Extra handlers (periodic due-date check, notification clicks).
         importScripts: ['reminder-sw.js']
       }

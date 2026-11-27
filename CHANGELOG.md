@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-11-27
+
+### Added
+- Anonymous visit counter in the footer (e.g. "12,345 visits") via the open-source Abacus service: one count per browser session, skipped on localhost and when Do Not Track / Global Privacy Control is on, no cookies or app data, fails silently. The service worker never caches these requests.
+- "Privacy & analytics" section and visits badge in the README.
+
+### Changed
+- Footer and README privacy wording now mention the anonymous visit count as the only outside request.
+
 ## [1.1.0] - 2026-11-27
 
 ### Added
@@ -38,6 +47,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Nothing yet (first release).
 
-[Unreleased]: https://github.com/lance6x5/home-maintenance-tracker/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/lance6x5/home-maintenance-tracker/compare/v1.2.0...HEAD
+[1.2.0]: https://github.com/lance6x5/home-maintenance-tracker/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/lance6x5/home-maintenance-tracker/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/lance6x5/home-maintenance-tracker/releases/tag/v1.0.0
